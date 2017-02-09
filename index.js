@@ -54,7 +54,7 @@ app.get('/', function(req, res){
 app.get('/:page_type', function(req, res){
   var logger = log4js.getLogger('visit');
   logger.setLevel('DEBUG');
-  logger.debug(req.hostname + "/" + req.params.page_type + " <<------- " + req.ip);
+  logger.debug(req.hostname + "/" + req.params.page_type + " <<------- " + req.ip + " : "  + req.get('User-Agent'));
 
   if(!des[req.params.page_type])
   {
