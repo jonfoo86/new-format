@@ -1,0 +1,46 @@
+
+<div clas="container-fluid"
+     style="height:3px;border:none;border-top:5px solid  #3366cc;margin:none;margin-top: 10px ;"></div>
+<div class="container-fluid">
+    <h2 class="col-md-offset-2 text-left" style="margin-top: 12px "><strong
+            style="color:blue;"><em>升职加薪</em></strong><strong style="color:red;">.</strong><strong
+            style="color:darkorange;"><em>cn</em></strong></h2>
+</div>
+<div ng-controller="FormatTextCtrl" >
+    <nav style="opacity: 0.8; 　border-radius: 0px;" class="navbar navbar-default navbar-inverse  bg-text"
+         data-bg-text="{{formatbk}}">
+        <div class="container-fluid">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+
+                    <% for(var type in alltype) {%>
+                    <li id="<%= type %>" >
+                        <a class="padding-top-button"  href="<%= type %>" > <%= alltype[type].name %></a>
+                    </li>
+                    <% } %>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid" >
+        <div class="container-fluid">
+            <div class="row" style="height:600px;">
+    <textarea ng-class="class" style=" height:100%;" placeholder="请输入想格式化的文本"
+              ng-model="orgtext"></textarea>
+                <div class="panel panel-primary col-md-6  col-sm-6 " style=" height:100%;" ng-show="isVisible">
+                    <div class="panel-body ">
+                        <p ng-bind-html="myHTML"></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <button class="btn btn-primary  btn-lg " style="display: block;  margin-left: auto;  margin-right: auto;"
+                ng-click="formatfc()">转换
+        </button>
+    </div>
+</div>
